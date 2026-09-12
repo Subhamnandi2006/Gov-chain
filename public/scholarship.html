@@ -197,7 +197,7 @@
       };
 
       try {
-        const res = await fetch('/api/scholarship/submit', {
+        const res = await fetch('/api/scholarship', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)

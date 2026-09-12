@@ -119,13 +119,20 @@ app.post('/api/issue-certificate', (req, res) => {
 app.post('/api/scholarships', (req, res) => {
   const submission = {
     id: "SCH-" + (1000 + scholarshipSubmissions.length + 1),
+    applicationId: "SCH-" + (1000 + scholarshipSubmissions.length + 1),
     submittedAt: new Date().toISOString(),
     ...req.body
   };
   scholarshipSubmissions.push(submission);
-  recordAuditLog("Scholarship Submitted", `Applicant: ${submission.name || 'Srijoy Ray'}`, "National Scholarship Portal", "Scholarship Application Package", "PENDING_VERIFICATION");
+  recordAuditLog("Scholarship Submitted", `Applicant: ${submission.fullName || submission.name || 'Srijoy Ray'}`, "National Scholarship Portal", "Scholarship Application Package", "PENDING_VERIFICATION");
   res.json({ success: true, message: "Scholarship application submitted successfully", applicationId: submission.id, data: submission });
 });
+
+// ADD THIS LINE right below it:
+app.post('/api/scholarship/submit', (req, res) => {
+  res.redirect(307, '/api/scholarships');
+});
+
 
 // Audit API
 app.get('/api/audit-logs', (req, res) => {
