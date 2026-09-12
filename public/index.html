@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gov-Chain | Citizen AI Orchestration Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Soothing Glow Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <a href="/" class="nav-brand">
+      <div class="brand-icon">
+        <i class="fa-solid fa-cube"></i>
+      </div>
+      <div>
+        <div class="brand-title">Gov-Chain</div>
+        <div class="brand-sub">Inter-Departmental Consent & Identity Layer</div>
+      </div>
+    </a>
+
+    <div class="nav-menu">
+      <!-- Services Dropdown (Opens new tabs) -->
+      <div class="dropdown">
+        <button class="dropdown-trigger" id="servicesDropdownBtn" type="button">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Services</span>
+          <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <!-- Services Dropdown (Directs to independent websites) -->
+        <div class="dropdown-menu" id="servicesDropdown">
+          <a class="dropdown-item" href="/scholarship" target="_blank" rel="noopener noreferrer">Scholarship Portal</a>
+            <div class="dropdown-icon blue"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="dropdown-info">
+              <div class="dropdown-title">Scholarship Application</div>
+              <div class="dropdown-desc">Direct Benefit Transfer</div>
+            </div>
+          </a>
+          <a class="dropdown-item" href="/aadhaar" target="_blank" rel="noopener noreferrer">Aadhaar Portal</a>
+            <div class="dropdown-icon green"><i class="fa-solid fa-id-card"></i></div>
+            <div class="dropdown-info">
+              <div class="dropdown-title">Aadhaar Identity Registry</div>
+              <div class="dropdown-desc">UIDAI Resident Node</div>
+            </div>
+          </a>
+          <a class="dropdown-item" href="/income" target="_blank" rel="noopener noreferrer">Income Certificate</a>
+            <div class="dropdown-icon amber"><i class="fa-solid fa-landmark"></i></div>
+            <div class="dropdown-info">
+              <div class="dropdown-title">Revenue & Income Portal</div>
+              <div class="dropdown-desc">State e-District Authority</div>
+            </div>
+          </a>
+          <a class="dropdown-item" href="/audit" target="_blank" rel="noopener noreferrer">Audit Ledger</a>
+            <div class="dropdown-icon purple"><i class="fa-solid fa-clipboard-check"></i></div>
+            <div class="dropdown-info">
+              <div class="dropdown-title">Compliance & Audit Trail</div>
+              <div class="dropdown-desc">DPDP Ledger</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+      <a href="/login.html" class="nav-link-btn">
+        <i class="fa-solid fa-user-shield"></i> Officer Login
+      </a>
+    </div>
+  </header>
+
+  <!-- Homepage Hero Section -->
+  <main class="home-hero">
+    <div class="trust-badge">
+      <span class="badge-pulse"></span>
+      <i class="fa-solid fa-shield-heart"></i>
+      <span>DPDP Act 2023 Compliant • Zero-Knowledge Exchange</span>
+    </div>
+
+    <h1 class="hero-title">
+      Government Services, <span class="gradient-text">Unified & Intelligent</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Eliminate manual paperwork and endless queues. Apply for state benefits using verified consent tokens, instant
+      registry auto-fill, and automated compliance.
+    </p>
+  </main>
+
+  <!-- Centered Homepage AI Voice Assistant -->
+  <section class="chat-container">
+    <div class="chat-box">
+      <div class="chat-header">
+        <div class="chat-status">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-ping"></span>
+          </div>
+          <div>
+            <div class="assistant-name">Gov-Chain AI Concierge</div>
+            <div class="assistant-state">Active • English & Regional Indian Speech</div>
+          </div>
+        </div>
+
+        <!-- Voice Soundwave Animation Indicator -->
+        <div class="soundwave-wrapper" title="Voice assistant ready">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+          <span class="bar bar-4"></span>
+          <span class="soundwave-text">Voice Enabled</span>
+        </div>
+      </div>
+
+      <!-- Messages Stream -->
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+          <div class="bot-avatar">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="message-content">
+            <p><strong>Namaste!</strong> I am your citizen service partner.</p>
+            <p style="margin-top: 6px;">
+              You can say <em>"Apply for Scholarship"</em>, <em>"Open Aadhaar Portal"</em>, or click one of the quick
+              suggestions below to begin.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggestion Chips -->
+      <div class="quick-chips-wrapper">
+        <button class="quick-chip" onclick="sendQuickMessage('Apply for Post-Matric Scholarship')">
+          <i class="fa-solid fa-graduation-cap"></i> Apply for Scholarship
+        </button>
+        <button class="quick-chip" onclick="sendQuickMessage('Open Aadhaar Identity Portal')">
+          <i class="fa-solid fa-id-card"></i> Aadhaar Portal
+        </button>
+        <button class="quick-chip" onclick="sendQuickMessage('Verify Income Certificate')">
+          <i class="fa-solid fa-file-invoice"></i> Revenue Portal
+        </button>
+        <button class="quick-chip" onclick="sendQuickMessage('Show me compliance audit logs')">
+          <i class="fa-solid fa-receipt"></i> Audit Trail
+        </button>
+      </div>
+
+      <!-- Text and Voice Input Bar -->
+      <div class="chat-input-bar">
+        <button class="voice-btn" id="voiceBtn" title="Speak to assistant" type="button">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <input type="text" id="chatInput" placeholder="Ask anything or request a service by typing or voice..." />
+        <button class="send-btn" id="sendBtn" onclick="handleUserSend()" title="Send Message">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Trust & Feature Pillars below chat -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+        <h3>Instant Auto-Fill</h3>
+        <p>One-click token retrieval pulls verified biometric and income data without re-typing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+        <h3>Zero-Knowledge Proofs</h3>
+        <p>Portals verify eligibility criteria without storing or exposing raw personal credentials.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-fingerprint"></i></div>
+        <h3>Immutable DPDP Ledger</h3>
+        <p>Every data-access request is cryptographically stamped for complete citizen privacy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>
