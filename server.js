@@ -116,7 +116,7 @@ app.post('/api/issue-certificate', (req, res) => {
 });
 
 // Scholarship API
-app.post('/api/scholarship', (req, res) => {
+app.post('/api/scholarships', (req, res) => {
   const submission = {
     id: "SCH-" + (1000 + scholarshipSubmissions.length + 1),
     applicationId: "SCH-" + (1000 + scholarshipSubmissions.length + 1),
@@ -130,7 +130,7 @@ app.post('/api/scholarship', (req, res) => {
 
 // ADD THIS LINE right below it:
 app.post('/api/scholarship/submit', (req, res) => {
-  res.redirect(307, '/api/scholarships');
+  res.redirect(307, '/api/scholarship');
 });
 
 
