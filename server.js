@@ -116,7 +116,7 @@ app.post('/api/issue-certificate', (req, res) => {
 });
 
 // Scholarship API
-app.post('/api/scholarships', (req, res) => {
+app.post('/api/scholarship', (req, res) => {
   const submission = {
     id: "SCH-" + (1000 + scholarshipSubmissions.length + 1),
     applicationId: "SCH-" + (1000 + scholarshipSubmissions.length + 1),
